@@ -18,20 +18,15 @@
     <script type="text/javascript" class="silex-script"></script>
     <style class="silex-inline-styles" type="text/css">
         .body-initial {
-            background-color: rgba(255, 255, 255, 1);
-        }
-        
-        .silex-id-1494090978059-0 {
-            min-height: 314px;
-            width: 304px;
-            background-color: rgb(255, 255, 255);
-            top: 117px;
-            left: 444px;
+            background-color: rgba(45, 148, 255, 1);
+            border-width: 8px 8px 8px 8px;
+            border-style: double;
+            border-color: #000000;
         }
     </style>
     <title></title>
     <script type="text/javascript" class="silex-json-styles">
-        [{"desktop":{"body-initial":{"background-color":"rgba(255,255,255,1)"},"silex-id-1474394621033-3":{"min-height":"600px","top":"5px","left":"0px"},"silex-id-1474394621032-2":{"min-height":"100px","background-color":"rgb(255, 255, 255)"},"silex-id-1474394605264-1":{"min-height":"100px","width":"100px","top":"100px","left":"100px"},"silex-id-1474394605263-0":{"min-height":"100px","background-color":"transparent"},"silex-id-1442914737143-3":{"min-height":"36px","width":"960px","top":"37px","left":"1px"},"silex-id-1494090978059-0":{"min-height":"314px","width":"304px","background-color":"rgb(255, 255, 255)","top":"117px","left":"444px"}},"mobile":{},"componentData":{}}]
+        [{"desktop":{"body-initial":{"background-color":"rgba(45,148,255,1)","border-width":"8px 8px 8px 8px ","border-style":"double","border-color":"#000000"},"silex-id-1474394621033-3":{"min-height":"600px","top":"5px","left":"0px"},"silex-id-1474394621032-2":{"min-height":"100px","background-color":"rgb(255, 255, 255)"},"silex-id-1474394605264-1":{"min-height":"100px","width":"100px","top":"100px","left":"100px"},"silex-id-1474394605263-0":{"min-height":"100px","background-color":"transparent"},"silex-id-1442914737143-3":{"min-height":"36px","width":"960px","top":"37px","left":"1px"},"silex-id-1494107657777-2":{"left":"-314px","width":"-10px","min-height":"-11px","top":"-285px"}},"mobile":{},"componentData":{}}]
     </script>
 
 
@@ -73,113 +68,6 @@
 
 
 
-    <div data-silex-type="html" class="editable-style silex-id-1494090978059-0 html-element" data-silex-id="silex-id-1494090978059-0">
-        <div class="silex-element-content">
-
-
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>demo</title>
-            <style>
-                body {
-                    max-width: 500px;
-                    margin: 2em auto;
-                    font-size: 20px;
-                }
-                
-                h1 {
-                    text-align: center;
-                }
-                
-                .buttons-wrapper {
-                    text-align: center;
-                }
-                
-                .hidden {
-                    display: none;
-                }
-                
-                #video {
-                    display: block;
-                    width: 100%;
-                }
-                
-                .button-demo {
-                    padding: 0.5em;
-                    display: inline-block;
-                    margin: 1em auto;
-                }
-                
-                .author {
-                    display: block;
-                    margin-top: 1em;
-                }
-            </style>
-
-
-            <h1>Demo</h1>
-            <video id="video" autoplay="autoplay" controls="true"></video>
-            <div class="buttons-wrapper">
-                <button id="button-play-gum" class="button-demo" href="#">Play</button>
-                <button id="button-stop-gum" class="button-demo" href="#">Stop</button>
-            </div>
-            <span id="gum-unsupported" class="hidden">API not supported</span>
-            <span id="gum-partially-supported" class="hidden">API partially supported (video only)</span>
-            <script>
-                var videoStream = null;
-                  var video = document.getElementById("video");
-            
-                  // Test browser support
-                  window.navigator = window.navigator || {};
-                  navigator.getUserMedia = navigator.getUserMedia       ||
-                                           navigator.webkitGetUserMedia ||
-                                           navigator.mozGetUserMedia    ||
-                                           null;
-            
-                  if (navigator.getUserMedia === null) {
-                    document.getElementById('gum-unsupported').classList.remove('hidden');
-                    document.getElementById('button-play-gum').setAttribute('disabled', 'disabled');
-                    document.getElementById('button-stop-gum').setAttribute('disabled', 'disabled');
-                  } else {
-                    // Opera <= 12.16 accepts the direct stream.
-                    // More on this here: http://dev.opera.com/articles/view/playing-with-html5-video-and-getusermedia-support/
-                    var createSrc = window.URL ? window.URL.createObjectURL : function(stream) {return stream;};
-            
-                    // Opera <= 12.16 support video only.
-                    var audioContext = window.AudioContext       ||
-                                       window.webkitAudioContext ||
-                                       null;
-                    if (audioContext === null) {
-                      document.getElementById('gum-partially-supported').classList.remove('hidden');
-                    }
-            
-                    document.getElementById('button-play-gum').addEventListener('click', function() {
-                      // Capture user's audio and video source
-                      navigator.getUserMedia({
-                        video: true,
-                        audio: true
-                      },
-                      function(stream) {
-                        videoStream = stream;
-                        // Stream the data
-                        video.src = createSrc(stream);
-                        video.play();
-                      },
-                      function(error) {
-                        console.log("Video capture error: ", error.code);
-                      });
-                    });
-                    document.getElementById('button-stop-gum').addEventListener('click', function() {
-                      // Pause the video
-                      video.pause();
-                      // Stop the stream
-                      videoStream.stop();
-                    });
-                  }
-            </script>
-
-        </div>
-    </div>
 </body>
 
 </html>
