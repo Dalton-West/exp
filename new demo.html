@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- generator meta tag -->
+    <!-- leave this for stats and Silex version check -->
+    <meta name="generator" content="Silex v2.2.7">
+    <!-- End of generator meta tag -->
+    <script type="text/javascript" src="//editor.silex.me/static/2.7/jquery.js" data-silex-static=""></script>
+    <script type="text/javascript" src="//editor.silex.me/static/2.7/jquery-ui.js" data-silex-static=""></script>
+    <script type="text/javascript" src="//editor.silex.me/static/2.7/pageable.js" data-silex-static=""></script>
+    <script type="text/javascript" src="//editor.silex.me/static/2.7/front-end.js" data-silex-static=""></script>
+    <link rel="stylesheet" href="//editor.silex.me/static/2.7/normalize.css" data-silex-static="">
+    <link rel="stylesheet" href="//editor.silex.me/static/2.7/front-end.css" data-silex-static="">
+
+    <style type="text/css" class="silex-style"></style>
+    <script type="text/javascript" class="silex-script">
+        /*global navigator, document */
+        ;(function (window, document) {
+            "use strict";
+        
+            window.getUserMedia = function (options, successCallback, errorCallback) {
+        
+                // Options are required
+                if (options !== undefined) {
+        
+                    // getUserMedia() feature detection
+                    navigator.getUserMedia_ = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
+        
+                    if ( !! navigator.getUserMedia_) {
+        
+        
+                        // constructing a getUserMedia config-object and 
+                        // an string (we will try both)
+                        var option_object = {};
+                        var option_string = '';
+                        var getUserMediaOptions, container, temp, video, ow, oh;
+        
+                        if (options.video === true) {
+                            option_object.video = true;
+                            option_string = 'video';
+                        }
+                        if (options.audio === true) {
+                            option_object.audio = true;
+                            if (option_string !== '') {
+                                option_string = option_string + ', ';
+                            }
+                            option_string = option_string + 'audio';
+                        }
+        
+                        container = document.getElementById(options.el);
+                        temp = document.createElement('video');
+        
+                        // Fix for ratio
+                        ow = parseInt(container.offsetWidth, 10);
+                        oh = parseInt(container.offsetHeight, 10);
+        
+                        if (options.width < ow && options.height < oh) {
+                            options.width = ow;
+                            options.height = oh;
+                        }
+        
+                        // configure the interim video
+                        temp.width = options.width;
+                        temp.height = options.height;
+                        temp.autoplay = true;
+                        container.appendChild(temp);
+                        video = temp;
+        
+                        // referenced for use in your applications
+                        options.videoEl = video;
+                        options.context = 'webrtc';
+        
+                        // first we try if getUserMedia supports the config object
+                        try {
+                            // try object
+                            navigator.getUserMedia_(option_object, successCallback, errorCallback);
+                        } catch (e) {
+                            // option object fails
+                            try {
+                                // try string syntax
+                                // if the config object failes, we try a config string
+                                navigator.getUserMedia_(option_string, successCallback, errorCallback);
+                            } catch (e2) {
+                                // both failed
+                                // neither object nor string works
+                                return undefined;
+                            }
+                        }
+                    } else {
+        
+                        // Act as a plain getUserMedia shield if no fallback is required
+                        if (options.noFallback === undefined || options.noFallback === false) {
+        
+                            // Fallback to flash
+                            var source, el, cam;
+        
+                            source = '<!--[if IE]>'+
+                            '<object id="XwebcamXobjectX" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="' + options.width + '" height="' + options.height + '">'+
+                            '<param name="movie" value="' + options.swffile + '" />'+
+                            '<![endif]-->'+
+                            '<!--[if !IE]>-->'+
+                            '<object id="XwebcamXobjectX" type="application/x-shockwave-flash" data="' + options.swffile + '" width="' + options.width + '" height="' + options.height + '">'+
+                            '<!--<![endif]-->'+
+                            '<param name="FlashVars" value="mode=' + options.mode + '&amp;quality=' + options.quality + '" />'+
+                            '<param name="allowScriptAccess" value="always" />'+
+                            '</object>';
+                            el = document.getElementById(options.el);
+                            el.innerHTML = source;
+        
+        
+                            (function register(run) {
+        
+                                cam = document.getElementById('XwebcamXobjectX');
+        
+                                if (cam.capture !== undefined) {
+        
+                                    // Simple callback methods are not allowed 
+                                    options.capture = function (x) {
+                                        try {
+                                            return cam.capture(x);
+                                        } catch (e) {}
+                                    };
+                                    options.save = function (x) {
+                                        try {
+                                            return cam.save(x);
+                                        } catch (e) {
+        
+                                        }
+                                    };
+                                    options.setCamera = function (x) {
+                                        try {
+                                            return cam.setCamera(x);
+                                        } catch (e) {}
+                                    };
+                                    options.getCameraList = function () {
+                                        try {
+                                            return cam.getCameraList();
+                                        } catch (e) {}
+                                    };
+        
+                                    // options.onLoad();
+                                    options.context = 'flash';
+                                    options.onLoad = successCallback;
+        
+                                } else if (run === 0) {
+                                    // options.debug("error", "Flash movie not yet registered!");
+                                    errorCallback();
+                                } else {
+                                    // Flash interface not ready yet 
+                                    window.setTimeout(register, 1000 * (4 - run), run - 1);
+                                }
+                            }(3));
+        
+                        }
+        
+                    }
+                }
+            };
+        
+        }(this, document));
+    </script>
+    <style class="silex-inline-styles" type="text/css">
+        .body-initial {
+            background-color: rgba(255, 255, 255, 1);
+        }
+        
+        .silex-id-1495674502281-1 {
+            top: 0px;
+            left: 0px;
+            min-width: 960px;
+            background-color: rgba(0, 0, 0, 1);
+        }
+        
+        .silex-id-1495674502280-0 {
+            min-height: 940px;
+            background-color: rgba(212, 227, 255, 1);
+            top: 16px;
+            left: 150px;
+            width: 960px;
+        }
+        
+        .silex-id-1495674563053-4 {
+            min-height: 201px;
+            width: 958px;
+            background-color: rgba(82, 206, 255, 1);
+            top: 1px;
+            left: 2px;
+        }
+        
+        .silex-id-1495675562108-26 {
+            min-height: 191px;
+            width: 236px;
+            top: 6px;
+            left: 9px;
+        }
+        
+        .silex-id-1495674656424-7 {
+            min-height: 38px;
+            width: 190px;
+            background-color: rgba(91, 189, 60, 1);
+            top: 270px;
+            left: 32px;
+        }
+        
+        .silex-id-1495674908153-15 {
+            min-height: 33px;
+            width: 186px;
+            top: 1px;
+            left: 0px;
+            background-color: rgba(61, 255, 68, 1);
+            border-style: double;
+        }
+        
+        .silex-id-1495676033183-28 {
+            min-height: 38px;
+            width: 190px;
+            background-color: transparent;
+            top: 327px;
+            left: 30px;
+        }
+        
+        .silex-id-1495676224166-35 {
+            min-height: 29px;
+            width: 186px;
+            top: 2px;
+            left: 1px;
+            background-color: rgba(61, 255, 68, 1);
+            border-style: double;
+        }
+        
+        .silex-id-1495676063501-29 {
+            min-height: 38px;
+            width: 182px;
+            background-color: rgba(91, 189, 60, 1);
+            top: 383px;
+            left: 42px;
+        }
+        
+        .silex-id-1495676331815-37 {
+            min-height: 30px;
+            width: 184px;
+            top: 0px;
+            left: -9px;
+            background-color: rgba(61, 255, 68, 1);
+            border-style: double;
+        }
+        
+        .silex-id-1495676095495-31 {
+            min-height: 38px;
+            width: 190px;
+            background-color: transparent;
+            top: 495px;
+            left: 29px;
+        }
+        
+        .silex-id-1495674938046-18 {
+            min-height: 29px;
+            width: 186px;
+            top: 2px;
+            left: 5px;
+            background-color: rgba(61, 255, 68, 1);
+            border-style: double;
+        }
+        
+        .silex-id-1495676075730-30 {
+            min-height: 38px;
+            width: 190px;
+            background-color: transparent;
+            top: 438px;
+            left: 29px;
+        }
+        
+        .silex-id-1495674943723-19 {
+            min-height: 29px;
+            width: 186px;
+            top: 1px;
+            left: 4px;
+            background-color: rgba(61, 255, 68, 1);
+            border-style: double;
+        }
+        
+        .silex-id-1495676113095-32 {
+            min-height: 38px;
+            width: 190px;
+            background-color: transparent;
+            top: 551px;
+            left: 28px;
+        }
+        
+        .silex-id-1495676286758-36 {
+            min-height: 29px;
+            width: 186px;
+            top: 2px;
+            left: 3px;
+            background-color: rgba(61, 255, 68, 1);
+            border-style: double;
+        }
+        
+        .silex-id-1495676137838-33 {
+            min-height: 38px;
+            width: 190px;
+            background-color: rgba(147, 217, 156, 1);
+            top: 217px;
+            left: 30px;
+        }
+        
+        .silex-id-1495675885640-27 {
+            min-height: 29px;
+            width: 186px;
+            top: 1px;
+            left: 1px;
+            background-color: rgba(61, 255, 68, 1);
+            border-style: double;
+        }
+        
+        .silex-id-1495676157252-34 {
+            min-height: 38px;
+            width: 190px;
+            background-color: transparent;
+            top: 607px;
+            left: 27px;
+        }
+        
+        .silex-id-1495676365416-39 {
+            min-height: 29px;
+            width: 186px;
+            top: 2px;
+            left: 5px;
+            background-color: rgba(61, 255, 68, 1);
+            border-style: double;
+        }
+        
+        .silex-id-1495676365416-38 {
+            min-height: 38px;
+            width: 190px;
+            background-color: transparent;
+            top: 664px;
+            left: 27px;
+        }
+        
+        .silex-id-1495675439221-25 {
+            min-height: 29px;
+            width: 186px;
+            top: 1px;
+            left: 4px;
+            background-color: rgba(61, 255, 68, 1);
+            border-style: double;
+        }
+        
+        .silex-id-1495674600354-5 {
+            min-height: 532px;
+            width: 678px;
+            background-color: rgb(255, 255, 255);
+            top: 206px;
+            left: 227px;
+        }
+        
+        .silex-id-1495677833468-40 {
+            min-height: 519px;
+            width: 667px;
+            background-color: rgb(255, 255, 255);
+            top: 7px;
+            left: 8px;
+        }
+    </style>
+    <title></title>
+    <script type="text/javascript" class="silex-json-styles">
+        [{"desktop":{"body-initial":{"background-color":"rgba(255,255,255,1)"},"silex-id-1474394621033-3":{"min-height":"600px","top":"5px","left":"0px"},"silex-id-1474394621032-2":{"min-height":"100px","background-color":"rgb(255, 255, 255)"},"silex-id-1474394605264-1":{"min-height":"100px","width":"100px","top":"100px","left":"100px"},"silex-id-1474394605263-0":{"min-height":"100px","background-color":"transparent"},"silex-id-1442914737143-3":{"min-height":"36px","width":"960px","top":"37px","left":"1px"},"silex-id-1495674502280-0":{"min-height":"940px","background-color":"rgba(212,227,255,1)","top":"16px","left":"150px","width":"960px"},"silex-id-1495674502281-1":{"top":"0px","left":"0px","min-width":"960px","background-color":"rgba(0,0,0,1)"},"silex-id-1495674536445-2":{"min-height":"100px","background-color":"rgb(255, 255, 255)","top":"16px","left":"392px","width":"476px"},"silex-id-1495674563053-4":{"min-height":"201px","width":"958px","background-color":"rgba(82,206,255,1)","top":"1px","left":"2px"},"silex-id-1495674600354-5":{"min-height":"532px","width":"678px","background-color":"rgb(255, 255, 255)","top":"206px","left":"227px"},"silex-id-1495674656424-7":{"min-height":"38px","width":"190px","background-color":"rgba(91,189,60,1)","top":"270px","left":"32px"},"silex-id-1495674908153-15":{"min-height":"33px","width":"186px","top":"1px","left":"0px","background-color":"rgba(61,255,68,1)","border-style":"double"},"silex-id-1495674933866-17":{"min-height":"29px","width":"186px","top":"5px","left":"3px","background-color":"rgba(61,255,68,1)"},"silex-id-1495674938046-18":{"min-height":"29px","width":"186px","top":"2px","left":"5px","background-color":"rgba(61,255,68,1)","border-style":"double"},"silex-id-1495674943723-19":{"min-height":"29px","width":"186px","top":"1px","left":"4px","background-color":"rgba(61,255,68,1)","border-style":"double"},"silex-id-1495675439221-25":{"min-height":"29px","width":"186px","top":"1px","left":"4px","background-color":"rgba(61,255,68,1)","border-style":"double"},"silex-id-1495675562108-26":{"min-height":"191px","width":"236px","top":"6px","left":"9px"},"silex-id-1495675885640-27":{"min-height":"29px","width":"186px","top":"1px","left":"1px","background-color":"rgba(61,255,68,1)","border-style":"double"},"silex-id-1495676033183-28":{"min-height":"38px","width":"190px","background-color":"transparent","top":"327px","left":"30px"},"silex-id-1495676063501-29":{"min-height":"38px","width":"182px","background-color":"rgba(91,189,60,1)","top":"383px","left":"42px"},"silex-id-1495676075730-30":{"min-height":"38px","width":"190px","background-color":"transparent","top":"438px","left":"29px"},"silex-id-1495676095495-31":{"min-height":"38px","width":"190px","background-color":"transparent","top":"495px","left":"29px"},"silex-id-1495676113095-32":{"min-height":"38px","width":"190px","background-color":"transparent","top":"551px","left":"28px"},"silex-id-1495676137838-33":{"min-height":"38px","width":"190px","background-color":"rgba(147,217,156,1)","top":"217px","left":"30px"},"silex-id-1495676157252-34":{"min-height":"38px","width":"190px","background-color":"transparent","top":"607px","left":"27px"},"silex-id-1495676224166-35":{"min-height":"29px","width":"186px","top":"2px","left":"1px","background-color":"rgba(61,255,68,1)","border-style":"double"},"silex-id-1495676286758-36":{"min-height":"29px","width":"186px","top":"2px","left":"3px","background-color":"rgba(61,255,68,1)","border-style":"double"},"silex-id-1495676331815-37":{"min-height":"30px","width":"184px","top":"0px","left":"-9px","background-color":"rgba(61,255,68,1)","border-style":"double"},"silex-id-1495676365416-38":{"min-height":"38px","width":"190px","background-color":"transparent","top":"664px","left":"27px"},"silex-id-1495676365416-39":{"min-height":"29px","width":"186px","top":"2px","left":"5px","background-color":"rgba(61,255,68,1)","border-style":"double"},"silex-id-1495677833468-40":{"min-height":"519px","width":"667px","background-color":"rgb(255, 255, 255)","top":"7px","left":"8px"}},"mobile":{},"componentData":{}}]
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.2" data-silex-viewport="">
+    <style id="current-page-style">
+        .page-tournament {
+            display: inherit;
+        }
+    </style>
+    <!-- Silex HEAD tag do not remove -->/*global navigator, document */ ;(function (window, document) { "use strict"; window.getUserMedia = function (options, successCallback, errorCallback) { // Options are required if (options !== undefined) { // getUserMedia() feature detection navigator.getUserMedia_
+    = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia); if ( !! navigator.getUserMedia_) { // constructing a getUserMedia config-object and // an string (we will try both) var option_object
+    = {}; var option_string = ''; var getUserMediaOptions, container, temp, video, ow, oh; if (options.video === true) { option_object.video = true; option_string = 'video'; } if (options.audio === true) { option_object.audio = true; if (option_string
+    !== '') { option_string = option_string + ', '; } option_string = option_string + 'audio'; } container = document.getElementById(options.el); temp = document.createElement('video'); // Fix for ratio ow = parseInt(container.offsetWidth, 10); oh = parseInt(container.offsetHeight,
+    10); if (options.width
+    < ow && options.height < oh) { options.width=o w; options.height=o h; } // configure the interim video temp.width=o ptions.width; temp.height=o ptions.height; temp.autoplay=t rue; container.appendChild(temp); video=t emp; //
+        referenced for use in your applications options.videoEl=v ideo; options.context='webrtc' ; // first we try if getUserMedia supports the config object try { // try object navigator.getUserMedia_(option_object, successCallback, errorCallback); } catch
+        (e) { // option object fails try { // try string syntax // if the config object failes, we try a config string navigator.getUserMedia_(option_string, successCallback, errorCallback); } catch (e2) { // both failed // neither object nor string works
+        return undefined; } } } else { // Act as a plain getUserMedia shield if no fallback is required if (options.noFallback===u ndefined || options.noFallback===f alse) { // Fallback to flash var source, el, cam; source='<!--[if IE]>' +
+        '<object id="XwebcamXobjectX" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="' + options.width + '" height="' + options.height + '">'+ '<param name="movie" value="' + options.swffile + '" />'+ '<![endif]-->'+ '<!--[if !IE]>-->'+ '<object id="XwebcamXobjectX" type="application/x-shockwave-flash" data="' + options.swffile +
+        '" width="' + options.width + '" height="' + options.height + '">'+ '<!--<![endif]-->'+ '<param name="FlashVars" value="mode=' + options.mode + '&amp;quality=' + options.quality + '" />'+ '<param name="allowScriptAccess" value="always" />'+ '</object>'; el=d
+        ocument.getElementById(options.el); el.innerHTML=s ource; (function register(run) { cam=d ocument.getElementById( 'XwebcamXobjectX'); if (cam.capture !==u ndefined) { // Simple callback methods are not allowed options.capture=f unction (x) { try {
+        return cam.capture(x); } catch (e) {} }; options.save=f unction (x) { try { return cam.save(x); } catch (e) { } }; options.setCamera=f unction (x) { try { return cam.setCamera(x); } catch (e) {} }; options.getCameraList=f unction () { try { return
+        cam.getCameraList(); } catch (e) {} }; // options.onLoad(); options.context='flash' ; options.onLoad=s uccessCallback; } else if (run===0 ) { // options.debug( "error", "Flash movie not yet registered!"); errorCallback(); } else { // Flash interface
+        not ready yet window.setTimeout(register, 1000 * (4 - run), run - 1); } }(3)); } } } }; }(this, document));<!-- End of Silex HEAD tag do not remove -->
+</head>
+
+<body data-silex-id="body-initial" class="body-initial enable-mobile silex-runtime" data-silex-type="container">
+    <div class="silex-pages">
+        <div data-silex-type="image" class="editable-style silex-id-hamburger-menu image-element menu-button prevent-draggable prevent-resizable" data-silex-id="silex-id-hamburger-menu" data-silex-href="#!page-home">
+            <img alt="open mobile menu" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAoCAYAAAC8cqlMAAAB5UlEQVR42u2ZPWvCUBSGM+UfFO3e3dLu/QN+oKj4EUXRQREEJYgoiCAu6qCogyDo7iJ21UUaKqEgCC4iiEMGB3UVgsnpTWj/wfVK2nvhGbKEPJyT996TMMzPGg6H5mKx+GgkyuWyeTQasb8OTDwef4tEIp8+n+/LYIjJZJJHQiwzm81M6OLDarWqNpsNjEYgEJCy2ewT0+/3TagighElNFAnQT6ft1ARKkJFqMgfFvF4PFpuEwFtdrcRqVarIIoirFYrIiyXSxiPx+B2u/GJBINBuF6vQHopigK1Wg2fCMdxcLlciIuoqgqNRgOfiN1uB3Qwg91uB8fjkQiHwwEmkwne1qLxS0VuKKJle71eh06nQ4Rmswk8z+MVcTqdsNlsQJZlotF7Pp8hk8ngE4lGo/qN7xG/vV4Pb0Xm8zlxkdPpBGgMx/+yJxIJKBQKRMjlcuBwOGhq/Q+RcDgMsViMCFrAuFwu/CKDwQC22y1IkkSE/X4PgiDo+xc2Ea0S9zjGa/Hb7Xbxifj9fj0K7yFSqVTwtlY6nYbpdKpPiSRYLBbQarX0PYymFhWhIlSEilCRW6GdyUqlkoVZr9dsKpXiOY6TtW+7BkNBz/7ebrcf9L+6Xq+XRYPMMyrTq5EIhUIvaAjTJb4BBNQ2yhnth0wAAAAASUVORK5CYII="
+                class="silex-element-content">
+        </div>
+
+        <a id="page-home" data-silex-type="page" class="page-element">Home</a><a id="page-tournament" data-silex-type="page" class="page-element page-link-active">Tournament</a><a id="page-rules" data-silex-type="page" class="page-element">Rules</a>
+        <a
+            id="page-handicap-conversion" data-silex-type="page" class="page-element">Handicap Conversion</a><a id="page-library" data-silex-type="page" class="page-element">Library</a><a id="page-payout-" data-silex-type="page" class="page-element">Payout %</a><a id="page-score-sheet" data-silex-type="page" class="page-element">Score Sheet</a>
+            <a
+                id="page-products" data-silex-type="page" class="page-element">Products</a><a id="page-contact-us" data-silex-type="page" class="page-element">contact us</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div data-silex-type="container" class="prevent-draggable container-element website-min-width editable-style silex-id-1495674502281-1 section-element" data-silex-id="silex-id-1495674502281-1">
+        <div data-silex-type="container" class="editable-style silex-element-content website-width silex-id-1495674502280-0 silex-container-content container-element prevent-draggable" data-silex-id="silex-id-1495674502280-0">
+
+
+
+
+
+
+
+
+
+            <div data-silex-type="container" class="editable-style silex-id-1495674563053-4 container-element" data-silex-id="silex-id-1495674563053-4">
+                <div data-silex-type="text" class="editable-style silex-id-1495675562108-26 text-element" data-silex-id="silex-id-1495675562108-26">
+                    <div class="silex-element-content normal">
+                        <font size="7"><b>The</b></font>
+                        <div>
+                            <font size="7"><b>&nbsp; &nbsp;Ghost</b></font>
+                        </div>
+                        <div>
+                            <font size="7"><b>&nbsp; &nbsp; &nbsp; &nbsp; Tour</b></font>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-silex-type="container" class="editable-style container-element silex-id-1495674656424-7" data-silex-id="silex-id-1495674656424-7">
+
+
+                <div data-silex-type="text" class="editable-style silex-id-1495674908153-15 text-element page-link-active" data-silex-id="silex-id-1495674908153-15" data-silex-href="#!page-tournament">
+                    <div class="silex-element-content normal">
+                        <div style="text-align: center;"><span style="font-size: x-large; font-weight: lighter;">Tournaments</span></div>
+                    </div>
+                </div>
+            </div>
+            <div data-silex-type="container" class="editable-style container-element silex-id-1495676033183-28" data-silex-id="silex-id-1495676033183-28">
+
+
+                <div data-silex-type="text" class="editable-style text-element silex-id-1495676224166-35" data-silex-id="silex-id-1495676224166-35" data-silex-href="#!page-rules">
+                    <div class="silex-element-content normal">
+                        <div style="text-align: center;">
+                            <font size="5">Rules</font>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-silex-type="container" class="editable-style container-element silex-id-1495676063501-29" data-silex-id="silex-id-1495676063501-29">
+
+
+                <div data-silex-type="text" class="editable-style text-element silex-id-1495676331815-37" data-silex-id="silex-id-1495676331815-37" data-silex-href="#!page-handicap-conversion">
+                    <div class="silex-element-content normal">
+                        <div style="text-align: center;"><span style="font-size: x-large; font-weight: lighter;">Handicap</span></div>
+                    </div>
+                </div>
+            </div>
+            <div data-silex-type="container" class="editable-style container-element silex-id-1495676095495-31" data-silex-id="silex-id-1495676095495-31">
+
+
+                <div data-silex-type="text" class="editable-style text-element silex-id-1495674938046-18" data-silex-id="silex-id-1495674938046-18" data-silex-href="#!page-payout-">
+                    <div class="silex-element-content normal">
+                        <div style="text-align: center;"><span style="font-size: x-large; font-weight: lighter;">Payout %</span></div>
+                    </div>
+                </div>
+            </div>
+            <div data-silex-type="container" class="editable-style container-element silex-id-1495676075730-30" data-silex-id="silex-id-1495676075730-30">
+
+
+                <div data-silex-type="text" class="editable-style text-element silex-id-1495674943723-19" data-silex-id="silex-id-1495674943723-19" data-silex-href="#!page-library">
+                    <div class="silex-element-content normal">
+                        <div style="text-align: center;"><span style="font-size: x-large; font-weight: lighter;">Library</span></div>
+                    </div>
+                </div>
+            </div>
+            <div data-silex-type="container" class="editable-style container-element silex-id-1495676113095-32" data-silex-id="silex-id-1495676113095-32">
+
+
+                <div data-silex-type="text" class="editable-style text-element silex-id-1495676286758-36" data-silex-id="silex-id-1495676286758-36" data-silex-href="#!page-score-sheet">
+                    <div class="silex-element-content normal">
+                        <div style="text-align: center;">
+                            <font size="5">Score Sheet</font>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-silex-type="container" class="editable-style container-element silex-id-1495676137838-33" data-silex-id="silex-id-1495676137838-33">
+
+
+                <div data-silex-type="text" class="editable-style text-element silex-id-1495675885640-27" data-silex-id="silex-id-1495675885640-27" data-silex-href="#!page-home">
+                    <div class="silex-element-content normal">
+                        <div style="text-align: center;">
+                            <font size="5">Home</font>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-silex-type="container" class="editable-style container-element silex-id-1495676157252-34" data-silex-id="silex-id-1495676157252-34">
+
+
+
+                <div data-silex-type="text" class="editable-style text-element silex-id-1495676365416-39" data-silex-id="silex-id-1495676365416-39" data-silex-href="#!page-products">
+                    <div class="silex-element-content normal">
+                        <div style="text-align: center;">
+                            <font size="5">Products</font>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-silex-type="container" class="editable-style container-element silex-id-1495676365416-38" data-silex-id="silex-id-1495676365416-38">
+
+
+
+                <div data-silex-type="text" class="editable-style text-element silex-id-1495675439221-25" data-silex-id="silex-id-1495675439221-25" data-silex-href="#!page-contact-us">
+                    <div class="silex-element-content normal">
+                        <div style="text-align: center;">
+                            <font size="5">CONTACT US</font>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-silex-type="container" class="editable-style silex-id-1495674600354-5 container-element" data-silex-id="silex-id-1495674600354-5">
+
+                <div data-silex-type="html" class="editable-style silex-id-1495677833468-40 html-element page-tournament paged-element" data-silex-id="silex-id-1495677833468-40">
+                    <div class="silex-element-content">
+
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>getUserMedia Demo</title>
+                        <style>
+                            body {
+                                max-width: 500px;
+                                margin: 2em auto;
+                                font-size: 20px;
+                            }
+                            
+                            h1 {
+                                text-align: center;
+                            }
+                            
+                            .buttons-wrapper {
+                                text-align: center;
+                            }
+                            
+                            .hidden {
+                                display: none;
+                            }
+                            
+                            #video {
+                                display: block;
+                                width: 100%;
+                            }
+                            
+                            .button-demo {
+                                padding: 0.5em;
+                                display: inline-block;
+                                margin: 1em auto;
+                            }
+                            
+                            .author {
+                                display: block;
+                                margin-top: 1em;
+                            }
+                        </style>
+
+
+                        <h1>getUserMedia API</h1>
+                        <video id="video" autoplay="autoplay" controls="true"></video>
+                        <div class="buttons-wrapper">
+                            <button id="button-play-gum" class="button-demo" href="#">Play demo</button>
+                            <button id="button-stop-gum" class="button-demo" href="#">Stop demo</button>
+                        </div>
+                        <span id="gum-unsupported" class="hidden">API not supported</span>
+                        <span id="gum-partially-supported" class="hidden">API partially supported (video only)</span>
+                        <script>
+                            var videoStream = null;
+                              var video = document.getElementById("video");
+                        
+                              // Test browser support
+                              window.navigator = window.navigator || {};
+                              navigator.getUserMedia = navigator.getUserMedia       ||
+                                                       navigator.webkitGetUserMedia ||
+                                                       navigator.mozGetUserMedia    ||
+                                                       null;
+                        
+                              if (navigator.getUserMedia === null) {
+                                document.getElementById('gum-unsupported').classList.remove('hidden');
+                                document.getElementById('button-play-gum').setAttribute('disabled', 'disabled');
+                                document.getElementById('button-stop-gum').setAttribute('disabled', 'disabled');
+                              } else {
+                                // Opera <= 12.16 accepts the direct stream.
+                                // More on this here: http://dev.opera.com/articles/view/playing-with-html5-video-and-getusermedia-support/
+                                var createSrc = window.URL ? window.URL.createObjectURL : function(stream) {return stream;};
+                        
+                                // Opera <= 12.16 support video only.
+                                var audioContext = window.AudioContext       ||
+                                                   window.webkitAudioContext ||
+                                                   null;
+                                if (audioContext === null) {
+                                  document.getElementById('gum-partially-supported').classList.remove('hidden');
+                                }
+                        
+                                document.getElementById('button-play-gum').addEventListener('click', function() {
+                                  // Capture user's audio and video source
+                                  navigator.getUserMedia({
+                                    video: true,
+                                    audio: true
+                                  },
+                                  function(stream) {
+                                    videoStream = stream;
+                                    // Stream the data
+                                    video.src = createSrc(stream);
+                                    video.play();
+                                  },
+                                  function(error) {
+                                    console.log("Video capture error: ", error.code);
+                                  });
+                                });
+                                document.getElementById('button-stop-gum').addEventListener('click', function() {
+                                  // Pause the video
+                                  video.pause();
+                                  // Stop the stream
+                                  videoStream.stop();
+                                });
+                              }
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
