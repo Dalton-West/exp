@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- generator meta tag -->
+    <!-- leave this for stats and Silex version check -->
+    <meta name="generator" content="Silex v2.2.7">
+    <!-- End of generator meta tag -->
+    <script type="text/javascript" src="//editor.silex.me/static/2.7/jquery.js" data-silex-static=""></script>
+    <script type="text/javascript" src="//editor.silex.me/static/2.7/jquery-ui.js" data-silex-static=""></script>
+    <script type="text/javascript" src="//editor.silex.me/static/2.7/pageable.js" data-silex-static=""></script>
+    <script type="text/javascript" src="//editor.silex.me/static/2.7/front-end.js" data-silex-static=""></script>
+    <link rel="stylesheet" href="//editor.silex.me/static/2.7/normalize.css" data-silex-static="">
+    <link rel="stylesheet" href="//editor.silex.me/static/2.7/front-end.css" data-silex-static="">
+
+    <style type="text/css" class="silex-style"></style>
+    <script type="text/javascript" class="silex-script"></script>
+    <style class="silex-inline-styles" type="text/css">
+        .body-initial {
+            background-color: rgba(255, 255, 255, 1);
+        }
+        
+        .silex-id-1478366444112-1 {
+            top: 0px;
+            left: 0px;
+            background-color: rgba(0, 0, 0, 1);
+            min-width: 1200px;
+        }
+        
+        .silex-id-1478366444112-0 {
+            min-height: 159px;
+            background-color: transparent;
+            width: 1200px;
+            top: 15px;
+            left: 150px;
+        }
+        
+        .silex-id-1495947022904-1 {
+            min-height: 24px;
+            width: 53px;
+            top: 109px;
+            left: 130px;
+        }
+        
+        .silex-id-1495947079144-2 {
+            min-height: 25px;
+            width: 114px;
+            top: 108px;
+            left: 220px;
+        }
+        
+        .silex-id-1495947132975-3 {
+            min-height: 25px;
+            width: 49px;
+            top: 107px;
+            left: 382px;
+        }
+        
+        .silex-id-1495947163901-4 {
+            min-height: 24px;
+            width: 64px;
+            top: 108px;
+            left: 480px;
+        }
+        
+        .silex-id-1495947240141-6 {
+            min-height: 25px;
+            width: 81px;
+            top: 108px;
+            left: 700px;
+        }
+        
+        .silex-id-1495947280195-7 {
+            min-height: 20px;
+            width: 90px;
+            top: 108px;
+            left: 823px;
+        }
+        
+        .silex-id-1495947312959-8 {
+            min-height: 25px;
+            width: 74px;
+            top: 108px;
+            left: 958px;
+        }
+        
+        .silex-id-1495947521808-9 {
+            min-height: 20px;
+            width: 54px;
+            top: 14px;
+            left: 1128px;
+        }
+        
+        .silex-id-1495947560970-10 {
+            min-height: 20px;
+            width: 63px;
+            top: 15px;
+            left: 1000px;
+        }
+        
+        .silex-id-1495947206720-5 {
+            min-height: 24px;
+            width: 64px;
+            top: 109px;
+            left: 590px;
+        }
+        
+        .silex-id-1495947851282-11 {
+            min-height: 21px;
+            width: 60px;
+            top: 36px;
+            left: 1128px;
+        }
+        
+        .silex-id-1495947886959-12 {
+            min-height: 20px;
+            width: 64px;
+            top: 36px;
+            left: 1027px;
+        }
+        
+        .silex-id-1495949021609-29 {
+            min-height: 20px;
+            width: 58px;
+            top: 20px;
+            left: 1121px;
+        }
+        
+        .silex-id-1495949064206-30 {
+            min-height: 25px;
+            width: 65px;
+            top: 21px;
+            left: 1020px;
+        }
+        
+        .silex-id-1495946974136-0 {
+            min-height: 55px;
+            width: 375px;
+            top: 18px;
+            left: 23px;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1495946974136-0 {
+                left: 42px;
+                top: 269px;
+            }
+        }
+        
+        .silex-id-1474394621033-3 {
+            top: 130px;
+            left: 0px;
+            min-width: 1200px;
+        }
+        
+        .silex-id-1474394621032-2 {
+            min-height: 520px;
+            background-color: rgba(146, 235, 241, 1);
+            width: 1200px;
+            top: 15px;
+            left: 150px;
+            border-style: double;
+        }
+        
+        .silex-id-1495947954248-13 {
+            min-height: 100px;
+            width: 394px;
+            background-color: rgb(255, 255, 255);
+            top: 50px;
+            left: 134px;
+            border-style: double;
+        }
+        
+        .silex-id-1495947976354-14 {
+            min-height: 55px;
+            width: 380px;
+            top: 23px;
+            left: 6px;
+        }
+        
+        .silex-id-1495948006455-15 {
+            min-height: 100px;
+            width: 394px;
+            background-color: rgb(255, 255, 255);
+            top: 202px;
+            left: 133px;
+            border-style: double;
+        }
+        
+        .silex-id-1495948006455-16 {
+            min-height: 58px;
+            width: 383px;
+            top: 23px;
+            left: 6px;
+        }
+        
+        .silex-id-1495948044073-17 {
+            min-height: 100px;
+            width: 394px;
+            background-color: rgb(255, 255, 255);
+            top: 359px;
+            left: 132px;
+            border-style: double;
+        }
+        
+        .silex-id-1495948044073-18 {
+            min-height: 55px;
+            width: 381px;
+            top: 23px;
+            left: 7px;
+        }
+        
+        .silex-id-1495948062819-21 {
+            min-height: 100px;
+            width: 394px;
+            background-color: rgb(255, 255, 255);
+            top: 49px;
+            left: 685px;
+            border-style: double;
+        }
+        
+        .silex-id-1495948062820-22 {
+            min-height: 56px;
+            width: 381px;
+            top: 21px;
+            left: 7px;
+        }
+        
+        .silex-id-1495948082169-25 {
+            min-height: 100px;
+            width: 394px;
+            background-color: rgb(255, 255, 255);
+            top: 198px;
+            left: 686px;
+            border-style: double;
+        }
+        
+        .silex-id-1495948082169-26 {
+            min-height: 56px;
+            width: 380px;
+            top: 24px;
+            left: 7px;
+        }
+        
+        .silex-id-1495948089708-27 {
+            min-height: 100px;
+            width: 394px;
+            background-color: rgb(255, 255, 255);
+            top: 358px;
+            left: 687px;
+            border-style: double;
+        }
+        
+        .silex-id-1495948089709-28 {
+            min-height: 55px;
+            width: 380px;
+            top: 25px;
+            left: 6px;
+        }
+        
+        .silex-id-1495949385343-31 {
+            min-height: 151px;
+            width: 1161px;
+            top: 14px;
+            left: 21px;
+        }
+        
+        .silex-id-1495949715103-32 {
+            min-height: 670px;
+            width: 1163px;
+            top: 176px;
+            left: 21px;
+        }
+        
+        .silex-id-1495988468424-33 {
+            min-height: 119px;
+            width: 878px;
+            top: 213px;
+            left: 300px;
+        }
+        
+        .silex-id-1495988729883-34 {
+            min-height: 571px;
+            width: 903px;
+            top: 350px;
+            left: 286px;
+        }
+        
+        .silex-id-1495989027597-35 {
+            min-height: 60px;
+            width: 581px;
+            top: 233px;
+            left: 430px;
+        }
+        
+        .silex-id-1495989774799-36 {
+            min-height: 857px;
+            width: 854px;
+            top: 306px;
+            left: 316px;
+            border-style: double;
+            background-color: rgba(146, 235, 241, 1);
+        }
+        
+        .silex-id-1495989806979-37 {
+            min-height: 65px;
+            width: 131px;
+            top: 221px;
+            left: 664px;
+        }
+        
+        .silex-id-1495990255650-39 {
+            min-height: 68px;
+            width: 728px;
+            top: 210px;
+            left: 365px;
+        }
+        
+        .silex-id-1495990159195-38 {
+            min-height: 943px;
+            width: 736px;
+            top: 302px;
+            left: 360px;
+            border-style: double;
+            background-color: rgba(146, 235, 241, 1);
+        }
+        
+        .silex-id-1495990655440-41 {
+            min-height: 65px;
+            width: 725px;
+            top: 206px;
+            left: 368px;
+        }
+        
+        .silex-id-1495990432834-40 {
+            min-height: 900px;
+            width: 416px;
+            top: 303px;
+            left: 496px;
+            border-style: double;
+            background-color: rgba(146, 235, 241, 1);
+        }
+        
+        .silex-id-1495995958927-42 {
+            min-height: 654px;
+            width: 856px;
+            top: 319px;
+            left: 321px;
+            border-style: double;
+            background-color: rgba(146, 235, 241, 1);
+        }
+        
+        .silex-id-1495996000639-43 {
+            min-height: 55px;
+            width: 320px;
+            top: 220px;
+            left: 592px;
+        }
+    </style>
+    <title></title>
+    <script type="text/javascript" class="silex-json-styles">
+        [{"desktop":{"body-initial":{"background-color":"rgba(255,255,255,1)"},"silex-id-1474394621033-3":{"top":"130px","left":"0px","min-width":"1200px"},"silex-id-1474394621032-2":{"min-height":"520px","background-color":"rgba(146,235,241,1)","width":"1200px","top":"15px","left":"150px","border-style":"double"},"silex-id-1474394605264-1":{"min-height":"100px","width":"100px","top":"100px","left":"100px"},"silex-id-1474394605263-0":{"min-height":"100px","background-color":"transparent"},"silex-id-1442914737143-3":{"min-height":"53px","width":"349px","top":"29px","left":"430px"},"silex-id-1478366444112-0":{"min-height":"159px","background-color":"transparent","width":"1200px","top":"15px","left":"150px"},"silex-id-1478366444112-1":{"top":"0px","left":"0px","background-color":"rgba(0,0,0,1)","min-width":"1200px"},"silex-id-1478366450713-2":{"min-height":"100px","background-color":"transparent","width":"1200px"},"silex-id-1495946974136-0":{"min-height":"55px","width":"375px","top":"18px","left":"23px"},"silex-id-1495947022904-1":{"min-height":"24px","width":"53px","top":"109px","left":"130px"},"silex-id-1495947079144-2":{"min-height":"25px","width":"114px","top":"108px","left":"220px"},"silex-id-1495947132975-3":{"min-height":"25px","width":"49px","top":"107px","left":"382px"},"silex-id-1495947163901-4":{"min-height":"24px","width":"64px","top":"108px","left":"480px"},"silex-id-1495947206720-5":{"min-height":"24px","width":"64px","top":"109px","left":"590px"},"silex-id-1495947240141-6":{"min-height":"25px","width":"81px","top":"108px","left":"700px"},"silex-id-1495947280195-7":{"min-height":"20px","width":"90px","top":"108px","left":"823px"},"silex-id-1495947312959-8":{"min-height":"25px","width":"74px","top":"108px","left":"958px"},"silex-id-1495947521808-9":{"min-height":"20px","width":"54px","top":"14px","left":"1128px"},"silex-id-1495947560970-10":{"min-height":"20px","width":"63px","top":"15px","left":"1000px"},"silex-id-1495947851282-11":{"min-height":"21px","width":"60px","top":"36px","left":"1128px"},"silex-id-1495947886959-12":{"min-height":"20px","width":"64px","top":"36px","left":"1027px"},"silex-id-1495947954248-13":{"min-height":"100px","width":"394px","background-color":"rgb(255, 255, 255)","top":"50px","left":"134px","border-style":"double"},"silex-id-1495947976354-14":{"min-height":"55px","width":"380px","top":"23px","left":"6px"},"silex-id-1495948006455-15":{"min-height":"100px","width":"394px","background-color":"rgb(255, 255, 255)","top":"202px","left":"133px","border-style":"double"},"silex-id-1495948006455-16":{"min-height":"58px","width":"383px","top":"23px","left":"6px"},"silex-id-1495948044073-17":{"min-height":"100px","width":"394px","background-color":"rgb(255, 255, 255)","top":"359px","left":"132px","border-style":"double"},"silex-id-1495948044073-18":{"min-height":"55px","width":"381px","top":"23px","left":"7px"},"silex-id-1495948052590-20":{"min-height":"89px","width":"381px","top":"5px","left":"6px"},"silex-id-1495948062819-21":{"min-height":"100px","width":"394px","background-color":"rgb(255, 255, 255)","top":"49px","left":"685px","border-style":"double"},"silex-id-1495948062820-22":{"min-height":"56px","width":"381px","top":"21px","left":"7px"},"silex-id-1495948082169-25":{"min-height":"100px","width":"394px","background-color":"rgb(255, 255, 255)","top":"198px","left":"686px","border-style":"double"},"silex-id-1495948082169-26":{"min-height":"56px","width":"380px","top":"24px","left":"7px"},"silex-id-1495948089708-27":{"min-height":"100px","width":"394px","background-color":"rgb(255, 255, 255)","top":"358px","left":"687px","border-style":"double"},"silex-id-1495948089709-28":{"min-height":"55px","width":"380px","top":"25px","left":"6px"},"silex-id-1495949021609-29":{"min-height":"20px","width":"58px","top":"20px","left":"1121px"},"silex-id-1495949064206-30":{"min-height":"25px","width":"65px","top":"21px","left":"1020px"},"silex-id-1495949385343-31":{"min-height":"151px","width":"1161px","top":"14px","left":"21px"},"silex-id-1495949715103-32":{"min-height":"670px","width":"1163px","top":"176px","left":"21px"},"silex-id-1495988468424-33":{"min-height":"119px","width":"878px","top":"213px","left":"300px"},"silex-id-1495988729883-34":{"min-height":"571px","width":"903px","top":"350px","left":"286px"},"silex-id-1495989027597-35":{"min-height":"60px","width":"581px","top":"233px","left":"430px"},"silex-id-1495989774799-36":{"min-height":"857px","width":"854px","top":"306px","left":"316px","border-style":"double","background-color":"rgba(146,235,241,1)"},"silex-id-1495989806979-37":{"min-height":"65px","width":"131px","top":"221px","left":"664px"},"silex-id-1495990159195-38":{"min-height":"943px","width":"736px","top":"302px","left":"360px","border-style":"double","background-color":"rgba(146,235,241,1)"},"silex-id-1495990255650-39":{"min-height":"68px","width":"728px","top":"210px","left":"365px"},"silex-id-1495990432834-40":{"min-height":"900px","width":"416px","top":"303px","left":"496px","border-style":"double","background-color":"rgba(146,235,241,1)"},"silex-id-1495990655440-41":{"min-height":"65px","width":"725px","top":"206px","left":"368px"},"silex-id-1495995958927-42":{"min-height":"654px","width":"856px","top":"319px","left":"321px","border-style":"double","background-color":"rgba(146,235,241,1)"},"silex-id-1495996000639-43":{"min-height":"55px","width":"320px","top":"220px","left":"592px"}},"mobile":{"silex-id-1495946974136-0":{"left":"42px","top":"269px"}},"componentData":{}}]
+    </script>
+
+
+
+
+
+
+    <meta name="website-width" content="1200">
+    <style type="text/css" class="silex-style-settings">
+        .website-width {
+            width: 1200px;
+        }
+        
+        .website-min-width {
+            min-width: 1500px;
+        }
+    </style>
+
+
+
+
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.2" data-silex-viewport="">
+    <style id="current-page-style">
+        .page-how-to {
+            display: inherit;
+        }
+    </style>
+    <!-- Silex HEAD tag do not remove -->
+    <!-- End of Silex HEAD tag do not remove -->
+</head>
+
+<body data-silex-id="body-initial" class="body-initial enable-mobile silex-runtime" data-silex-type="container">
+    <div class="silex-pages">
+        <div data-silex-type="image" class="editable-style silex-id-hamburger-menu image-element menu-button prevent-draggable prevent-resizable" data-silex-id="silex-id-hamburger-menu">
+            <img alt="open mobile menu" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAoCAYAAAC8cqlMAAAB5UlEQVR42u2ZPWvCUBSGM+UfFO3e3dLu/QN+oKj4EUXRQREEJYgoiCAu6qCogyDo7iJ21UUaKqEgCC4iiEMGB3UVgsnpTWj/wfVK2nvhGbKEPJyT996TMMzPGg6H5mKx+GgkyuWyeTQasb8OTDwef4tEIp8+n+/LYIjJZJJHQiwzm81M6OLDarWqNpsNjEYgEJCy2ewT0+/3TagighElNFAnQT6ft1ARKkJFqMgfFvF4PFpuEwFtdrcRqVarIIoirFYrIiyXSxiPx+B2u/GJBINBuF6vQHopigK1Wg2fCMdxcLlciIuoqgqNRgOfiN1uB3Qwg91uB8fjkQiHwwEmkwne1qLxS0VuKKJle71eh06nQ4Rmswk8z+MVcTqdsNlsQJZlotF7Pp8hk8ngE4lGo/qN7xG/vV4Pb0Xm8zlxkdPpBGgMx/+yJxIJKBQKRMjlcuBwOGhq/Q+RcDgMsViMCFrAuFwu/CKDwQC22y1IkkSE/X4PgiDo+xc2Ea0S9zjGa/Hb7Xbxifj9fj0K7yFSqVTwtlY6nYbpdKpPiSRYLBbQarX0PYymFhWhIlSEilCRW6GdyUqlkoVZr9dsKpXiOY6TtW+7BkNBz/7ebrcf9L+6Xq+XRYPMMyrTq5EIhUIvaAjTJb4BBNQ2yhnth0wAAAAASUVORK5CYII="
+                class="silex-element-content">
+        </div>
+
+        <a id="page-home" data-silex-type="page" class="page-element">Home</a><a id="page-tournaments" data-silex-type="page" class="page-element">Tournaments</a><a id="page-rules" data-silex-type="page" class="page-element">Rules</a>
+        <a id="page-how-to" data-silex-type="page" class="page-element page-link-active">How To</a><a id="page-library" data-silex-type="page" class="page-element">Library</a><a id="page-handicap-conversion" data-silex-type="page" class="page-element">Handicap conversion</a>
+        <a id="page-payout-" data-silex-type="page" class="page-element">Payout %</a>
+        <a id="page-products" data-silex-type="page" class="page-element">Products</a><a id="page-register" data-silex-type="page" class="page-element">Register</a><a id="page-sign-in" data-silex-type="page" class="page-element">Sign In</a><a id="page-7-table"
+            data-silex-type="page" class="page-element">7' Table</a><a id="page-8-table" data-silex-type="page" class="page-element">8' Table</a><a id="page-9-table" data-silex-type="page" class="page-element">9' Table</a><a id="page-open" data-silex-type="page"
+            class="page-element">Open</a><a id="page-weekly-event" data-silex-type="page" class="page-element">Weekly Event</a><a id="page-results" data-silex-type="page" class="page-element">Results</a></div>
+
+
+
+
+
+
+
+
+
+    <div data-silex-type="container" class="prevent-draggable container-element editable-style silex-id-1478366444112-1 section-element website-min-width" data-silex-id="silex-id-1478366444112-1">
+        <div data-silex-type="container" class="editable-style silex-element-content silex-id-1478366444112-0 silex-container-content container-element prevent-draggable website-width" data-silex-id="silex-id-1478366444112-0">
+            <div data-silex-type="text" class="editable-style silex-id-1495947022904-1 text-element hide-on-mobile" data-silex-id="silex-id-1495947022904-1" data-silex-href="#!page-home">
+                <div class="silex-element-content normal">
+                    <font size="4" color="#ffffff"><b>Home</b></font>
+                </div>
+            </div>
+            <div data-silex-type="text" class="editable-style text-element silex-id-1495947079144-2 hide-on-mobile" data-silex-id="silex-id-1495947079144-2" data-silex-href="#!page-tournaments">
+                <div class="silex-element-content normal">
+                    <font size="4" color="#ffffff"><b>Tournaments</b></font>
+                </div>
+            </div>
+
+
+            <div data-silex-type="text" class="editable-style text-element silex-id-1495947132975-3 hide-on-mobile" data-silex-id="silex-id-1495947132975-3" data-silex-href="#!page-rules">
+                <div class="silex-element-content normal">
+                    <font size="4" color="#ffffff"><b>Rules</b></font>
+                </div>
+            </div>
+            <div data-silex-type="text" class="editable-style text-element silex-id-1495947163901-4 hide-on-mobile page-link-active" data-silex-id="silex-id-1495947163901-4" data-silex-href="#!page-how-to">
+                <div class="silex-element-content normal">
+                    <font size="4" color="#ffffff"><b>How To</b></font>
+                </div>
+            </div>
+            <div data-silex-type="text" class="editable-style text-element silex-id-1495947240141-6 hide-on-mobile" data-silex-id="silex-id-1495947240141-6" data-silex-href="#!page-handicap-conversion">
+                <div class="silex-element-content normal">
+                    <font size="4" color="#ffffff"><b>Handicap</b></font>
+                </div>
+            </div>
+            <div data-silex-type="text" class="editable-style text-element silex-id-1495947280195-7 hide-on-mobile" data-silex-id="silex-id-1495947280195-7" data-silex-href="#!page-payout-">
+                <div class="silex-element-content normal">
+                    <font size="4" color="#ffffff"><b>Payout %</b></font>
+                </div>
+            </div>
+            <div data-silex-type="text" class="editable-style text-element silex-id-1495947312959-8 hide-on-mobile" data-silex-id="silex-id-1495947312959-8" data-silex-href="#!page-products">
+                <div class="silex-element-content normal">
+                    <font size="4" color="#ffffff"><b>Products</b></font>
+                </div>
+            </div>
+            <div data-silex-type="text" class="editable-style silex-id-1495947521808-9 text-element page-products paged-element" data-silex-id="silex-id-1495947521808-9">
+                <div class="silex-element-content normal">Sign In</div>
+            </div>
+            <div data-silex-type="text" class="editable-style silex-id-1495947560970-10 text-element page-products paged-element" data-silex-id="silex-id-1495947560970-10">
+                <div class="silex-element-content normal">Register</div>
+            </div>
+            <div data-silex-type="text" class="editable-style text-element silex-id-1495947206720-5 hide-on-mobile" data-silex-id="silex-id-1495947206720-5" data-silex-href="#!page-library">
+                <div class="silex-element-content normal">
+                    <font size="4" color="#ffffff"><b>Library</b></font>
+                </div>
+            </div>
+            <div data-silex-type="text" class="editable-style silex-id-1495947851282-11 text-element page-sign-in paged-element" data-silex-id="silex-id-1495947851282-11" data-silex-href="#!page-sign-in">
+                <div class="silex-element-content normal">Sign In</div>
+            </div>
+            <div data-silex-type="text" class="editable-style text-element silex-id-1495947886959-12 page-sign-in paged-element" data-silex-id="silex-id-1495947886959-12" data-silex-href="#!page-register">
+                <div class="silex-element-content normal">Register</div>
+            </div>
+            <div data-silex-type="text" class="editable-style silex-id-1495949021609-29 text-element" data-silex-id="silex-id-1495949021609-29" data-silex-href="#!page-sign-in">
+                <div class="silex-element-content normal">
+                    <font color="#ffffff">Sign In</font>
+                </div>
+            </div>
+            <div data-silex-type="text" class="editable-style silex-id-1495949064206-30 text-element" data-silex-id="silex-id-1495949064206-30" data-silex-href="#!page-register">
+                <div class="silex-element-content normal">
+                    <font color="#ffffff">Register</font>
+                </div>
+            </div>
+            <div data-silex-type="text" class="editable-style silex-id-1495946974136-0 text-element" data-silex-id="silex-id-1495946974136-0">
+                <div class="silex-element-content normal">
+                    <font size="7" color="#ffffff"><b>The Ghost Tour</b></font>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-silex-type="container" class="prevent-draggable container-element editable-style silex-id-1474394621033-3 section-element website-min-width page-tournaments paged-element" data-silex-id="silex-id-1474394621033-3">
+        <div data-silex-type="container" class="editable-style silex-element-content silex-id-1474394621032-2 silex-container-content container-element prevent-draggable website-width" data-silex-id="silex-id-1474394621032-2">
+
+            <div data-silex-type="container" class="editable-style silex-id-1495947954248-13 container-element page-tournaments paged-element" data-silex-id="silex-id-1495947954248-13">
+
+
+                <div data-silex-type="text" class="editable-style silex-id-1495947976354-14 text-element" data-silex-id="silex-id-1495947976354-14" data-silex-href="#!page-7-table">
+                    <div class="silex-element-content normal">
+                        <div style="text-align: center;">
+                            <font size="7"><b>&nbsp;</b></font><b style="font-size: -webkit-xxx-large;">7' Table</b></div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-silex-type="container" class="editable-style container-element silex-id-1495948006455-15 page-tournaments paged-element" data-silex-id="silex-id-1495948006455-15">
+
+                <div data-silex-type="text" class="editable-style text-element silex-id-1495948006455-16" data-silex-id="silex-id-1495948006455-16" data-silex-href="#!page-8-table">
+                    <div class="silex-element-content normal">
+                        <div style="text-align: center;"><span style="font-size: -webkit-xxx-large;"><b>8' Table</b></span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-silex-type="container" class="editable-style container-element silex-id-1495948044073-17 page-tournaments paged-element" data-silex-id="silex-id-1495948044073-17">
+
+                <div data-silex-type="text" class="editable-style text-element silex-id-1495948044073-18" data-silex-id="silex-id-1495948044073-18" data-silex-href="#!page-9-table">
+                    <div class="silex-element-content normal">
+                        <div style="text-align: center;"><span style="font-size: -webkit-xxx-large;"><b>9' Table</b></span></div>
+                    </div>
+                </div>
+            </div>
+            <div data-silex-type="container" class="editable-style container-element silex-id-1495948062819-21 page-tournaments paged-element" data-silex-id="silex-id-1495948062819-21">
+
+                <div data-silex-type="text" class="editable-style text-element silex-id-1495948062820-22" data-silex-id="silex-id-1495948062820-22" data-silex-href="#!page-open">
+                    <div class="silex-element-content normal">
+                        <div style="text-align: center;"><span style="font-size: -webkit-xxx-large;"><b>Open Event</b></span></div>
+                    </div>
+                </div>
+            </div>
+            <div data-silex-type="container" class="editable-style container-element silex-id-1495948082169-25 page-tournaments paged-element" data-silex-id="silex-id-1495948082169-25">
+
+                <div data-silex-type="text" class="editable-style text-element silex-id-1495948082169-26" data-silex-id="silex-id-1495948082169-26" data-silex-href="#!page-weekly-event">
+                    <div class="silex-element-content normal">
+                        <div style="text-align: center;"><b style="font-size: -webkit-xxx-large;">Weekly Event</b></div>
+                    </div>
+                </div>
+            </div>
+            <div data-silex-type="container" class="editable-style container-element silex-id-1495948089708-27 page-tournaments paged-element" data-silex-id="silex-id-1495948089708-27">
+
+                <div data-silex-type="text" class="editable-style text-element silex-id-1495948089709-28" data-silex-id="silex-id-1495948089709-28" data-silex-href="#!page-results">
+                    <div class="silex-element-content normal">
+                        <div style="text-align: center;"><span style="font-size: -webkit-xxx-large;"><b>Results</b></span></div>
+                    </div>
+                </div>
+            </div>
+            <div data-silex-type="text" class="editable-style silex-id-1495949385343-31 text-element page-home paged-element" data-silex-id="silex-id-1495949385343-31">
+                <div class="silex-element-content normal">
+                    <div style="text-align: center;"><span style="font-size: x-large;"><b>Welcome to The Ghost Tour!!!!</b></span></div>
+                    <div style="text-align: center;">
+                        <font size="5"><b>Real Pool Tournaments played anywhere in the world.</b></font>
+                    </div>
+                    <div style="text-align: center;">
+                        <font size="5"><b>All you need is cell phone, tablet or laptop and have an internet connection.</b></font>
+                    </div>
+                    <div style="text-align: center;">
+                        <font size="5"><b>You will also need &nbsp;a pool table.</b></font>
+                    </div>
+                    <div style="text-align: center;">
+                        <font size="5"><b>Real pool...Real Tournaments...Real Players...Real Entry Fee...Real Payouts</b></font>
+                    </div>
+                </div>
+            </div>
+            <div data-silex-type="image" class="editable-style silex-id-1495949715103-32 image-element page-home paged-element" data-silex-id="silex-id-1495949715103-32"><img src="../../Photos/master/pool%2013.jpg" class="silex-element-content"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div data-silex-type="text" class="editable-style silex-id-1495988468424-33 text-element page-home paged-element" data-silex-id="silex-id-1495988468424-33">
+        <div class="silex-element-content normal">
+            <div style="text-align: center;"><span style="font-size: x-large;"><b>Welcome to the Ghost Tour!!!!</b></span></div>
+            <div style="text-align: center;">
+                <font size="5"><b>Real Pool...Real Tournaments...Real players...Real Entry Fee...Real Payouts</b></font>
+            </div>
+            <div style="text-align: center;">
+                <font size="5"><b>All you need is an internet connection with a smart phone, tablet or laptop</b></font>
+            </div>
+            <div style="text-align: center;">
+                <font size="5"><b>Pool Players For Pool Players</b></font>
+            </div>
+        </div>
+    </div>
+    <div data-silex-type="image" class="editable-style silex-id-1495988729883-34 image-element page-home paged-element" data-silex-id="silex-id-1495988729883-34"><img src="../../Photos/master/pool%2013.jpg" class="silex-element-content"></div>
+    <div data-silex-type="text" class="editable-style silex-id-1495989027597-35 text-element page-library paged-element page-products page-7-table page-8-table page-9-table page-open page-weekly-event page-results"
+        data-silex-id="silex-id-1495989027597-35">
+        <div class="silex-element-content normal">
+            <div style="text-align: center;"><span style="font-size: -webkit-xxx-large; font-weight: lighter;">Coming soon</span></div>
+        </div>
+    </div>
+    <div data-silex-type="text" class="editable-style silex-id-1495989774799-36 text-element page-rules paged-element" data-silex-id="silex-id-1495989774799-36">
+        <div class="silex-element-content normal">
+            <font size="5"><b>&nbsp;<u>Equipment Rules</u></b></font>
+            <div>
+                <font size="4"><b>&nbsp; 1) all tables must be slate and have&nbsp;</b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp; 2) minimum table size is 7'</b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp; 3) tables must not have a significant "roll" that would help a player</b></font>
+            </div>
+            <div><br></div>
+            <div>
+                <font size="4"><b><br></b></font>
+            </div>
+            <div>
+                <font size="4"><b><br></b></font>
+            </div>
+            <div>
+                <font size="5"><b>&nbsp;&nbsp;<u>Tournament rules</u></b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp; 1) When racking the 1,2 and 3 balls must be on the corners</b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp; 2) The lowest number ball must be struck first or it is a foul.</b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp; 3) Any foul ends the current rack you are playing.</b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp; 4) If you make a good hit and scratch then all balls made with that hit will be counted.</b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp; 5) If you don't make a ball on the break you have two options. 1) Play the cue ball</b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp; &nbsp; &nbsp; from where it lies with no penalty</b></font><b style="font-size: large;">&nbsp;2) Take ball in hand and take a 2 point penalty.</b></div>
+            <div>
+                <font size="4"><b>&nbsp; 6) If you scratch on the break you must shoot from behind the scratch line</b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp; &nbsp; &nbsp; and it is a 2 point penalty. If the object ball you are shooting at is behind</b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp; &nbsp; &nbsp; this line then you must shoot past the line and come back to hit it.</b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp; &nbsp; &nbsp; If any part of the ball is touching the scratch line then it is considered behind the line.</b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp; 7) Anytime a ball comes off the table (other than a legal jump) it will end the rack.</b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp; 8) Anyone caught intentionally cheating will be banned from any future tournaments.&nbsp;&nbsp;</b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp; 9) At the beginning of your match please state your name and where you are from.</b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp;10) A person whether it be the shooter or someone else must remain in the view of</b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp; &nbsp; &nbsp; &nbsp;the camera at all times</b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp;11) We encourage, but don't require, having music playing in the background.</b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp;</b></font>
+            </div>
+            <div>
+                <font size="4"><b><br></b></font>
+            </div>
+            <div>
+                <font size="4"><b><br></b></font>
+            </div>
+            <div>
+                <font size="5"><b><u>&nbsp; General Rules</u></b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp; 1) Your recording device must be set up to view the entire table and at least 3' or more&nbsp;</b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp; &nbsp; &nbsp; &nbsp;on&nbsp;</b></font><b style="font-size: large;">all sides.</b></div>
+            <div>
+                <font size="4"><b>&nbsp; 2) We will give all players a handicap after the first tournament based on your match.</b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp; 3) Any player that is playing for the first time can have a handicap. Please see the&nbsp;</b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp; &nbsp; &nbsp; Handicap Conversion page.</b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp; 4) Anyone caught "sandbagging" will lose all handicaps for a time frame that 10ball.org</b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp; &nbsp; &nbsp; decides.</b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp; 5) The 10ball.org review board will have all final say on rules violations and penalties.</b></font>
+            </div>
+            <div>
+                <font size="4"><b>&nbsp; 6) Anyone winning money will have a reduced or removed handicap for the period of&nbsp;</b></font>
+            </div>
+            <div><b style="font-size: large;">&nbsp; &nbsp; &nbsp; up too three tournaments.</b><b style="font-size: large;">) Take ball in hand and take a 2 point penalty.</b></div>
+            <div><br></div>
+            <div>
+                <font size="4"><b><br></b></font>
+            </div>
+            <div>
+                <font size="4"><b><br></b></font>
+            </div>
+            <div><br></div>
+        </div>
+    </div>
+    <div data-silex-type="text" class="editable-style silex-id-1495989806979-37 text-element page-rules paged-element" data-silex-id="silex-id-1495989806979-37">
+        <div class="silex-element-content normal">
+            <font size="7"><b><u>Rules</u></b></font>
+        </div>
+    </div>
+    <div data-silex-type="text" class="editable-style silex-id-1495990255650-39 text-element page-handicap-conversion paged-element" data-silex-id="silex-id-1495990255650-39">
+        <div class="silex-element-content normal">
+            <div style="text-align: center;"><b style="font-size: -webkit-xxx-large;"><u>Handicap &amp; Conversions</u></b></div>
+        </div>
+    </div>
+    <div data-silex-type="text" class="editable-style silex-id-1495990159195-38 text-element page-handicap-conversion paged-element" data-silex-id="silex-id-1495990159195-38">
+        <div class="silex-element-content normal">
+            <div>
+                <font size="5">These conversions are only used on the initial tournament and after that it will be based on how you play in our tournaments. We will be doing a 4 month rolling average for your skill level.</font>
+            </div>
+            <font size="5"><u><div><font size="5"><u><br></u></font>
+        </div>Leagues with a 2-7 handicap</u>
+        </font>
+        <div>
+            <font size="5">2's get a 25 ball handicap</font>
+        </div>
+        <div>
+            <font size="5">3's get a 22 ball handicap</font>
+        </div>
+        <div>
+            <font size="5">4's get a 19 ball handicap</font>
+        </div>
+        <div>
+            <font size="5">5's get a 16 ball handicap</font>
+        </div>
+        <div>
+            <font size="5">6's get a 13 ball handicap</font>
+        </div>
+        <div>
+            <font size="5">7's get a 10 ball handicap</font>
+        </div>
+        <div>
+            <font size="5"><br></font>
+        </div>
+        <div>
+            <font size="5"><u>Leagues with a 1-10 handicap</u></font>
+        </div>
+        <div>
+            <font size="5">1's get a 25 ball handicap</font>
+        </div>
+        <div>
+            <font size="5">2's get a 23 ball handicap</font>
+        </div>
+        <div>
+            <font size="5">3's get a 22 ball handicap</font>
+        </div>
+        <div>
+            <font size="5">4's get a 21 ball handicap</font>
+        </div>
+        <div>
+            <font size="5">5's get a 20 ball handicap</font>
+        </div>
+        <div>
+            <font size="5">6's get a 18 ball handicap</font>
+        </div>
+        <div>
+            <font size="5">7's get a 16 ball handicap</font>
+        </div>
+        <div>
+            <font size="5">8's get a 14 ball handicap</font>
+        </div>
+        <div>
+            <font size="5">9's get a 12 ball handicap</font>
+        </div>
+        <div>
+            <font size="5">10's get a 10 ball handicap</font>
+        </div>
+        <div>
+            <font size="5"><br></font>
+        </div>
+        <div>
+            <font size="5"><u>Players that have a rating average</u></font>
+        </div>
+        <div>
+            <font size="5">100-199 gets a 25 ball handicap</font>
+        </div>
+        <div>
+            <font size="5">200-299 gets a 22</font>
+        </div>
+        <div>
+            <font size="5">300-399 gets a 20</font>
+        </div>
+        <div>
+            <font size="5">400-499 gets a 18</font>
+        </div>
+        <div>
+            <font size="5">500-599 gets a 14</font>
+        </div>
+        <div>
+            <font size="5">600-699 gets a gets a 10 ball handicap</font>
+        </div>
+        <div>
+            <font size="5">700-799 gets a 6 ball handicap</font>
+        </div>
+        <div>
+            <font size="5">800 and above gets a 4 ball handicap</font>
+        </div>
+    </div>
+    </div>
+    <div data-silex-type="text" class="editable-style silex-id-1495990655440-41 text-element page-payout- paged-element" data-silex-id="silex-id-1495990655440-41">
+        <div class="silex-element-content normal">
+            <div style="text-align: center;"><u style="font-size: -webkit-xxx-large; font-weight: lighter;"><b>Payout % vs Number of Players</b></u></div>
+        </div>
+    </div>
+    <div data-silex-type="text" class="editable-style silex-id-1495990432834-40 text-element page-payout- paged-element" data-silex-id="silex-id-1495990432834-40">
+        <div class="silex-element-content normal">
+            <div><span style="font-size: x-large; font-weight: lighter;">&nbsp;&nbsp;</span><b><u style="font-size: x-large;">50 people or less</u><span style="font-size: x-large;">&nbsp; </span></b><span style="font-size: x-large; font-weight: lighter;">&nbsp; &nbsp; </span><b>&nbsp;<u style="font-size: x-large;">51-100</u></b></div>
+            <div>
+                <div>
+                    <font size="5">&nbsp; 1st place only &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1st &nbsp; 65%</font>
+                </div>
+                <div>
+                    <font size="5">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2nd &nbsp;35%</font>
+                </div>
+                <div><br></div>
+                <div><br></div>
+                <div></div>
+                <div>
+                    <font size="5"><b>&nbsp; <u>101-200</u>&nbsp; </b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<u><b>201-500</b></u></font>
+                </div>
+                <div>
+                    <font size="5">&nbsp; 1st &nbsp; 50% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1st &nbsp; &nbsp;40%</font>
+                </div>
+                <div>
+                    <font size="5">&nbsp; 2nd &nbsp;30% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2nd &nbsp; 30%&nbsp;</font>
+                </div>
+                <div>
+                    <font size="5">&nbsp; 3rd &nbsp; 20% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3rd &nbsp; &nbsp;20%</font>
+                </div>
+                <div>
+                    <font size="5">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4th &nbsp; &nbsp;10%</font>
+                </div>
+                <div><br></div>
+                <div>
+                    <font size="5"><br></font>
+                </div>
+                <div>
+                    <font size="5"><b>&nbsp;&nbsp;<u>501-1000&nbsp;</u>&nbsp;</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;<u><b>1001-2500</b></u></font>
+                </div>
+                <div>
+                    <font size="5">&nbsp; 1st &nbsp; &nbsp;40% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1st &nbsp; &nbsp;30%</font>
+                </div>
+                <div>
+                    <font size="5">&nbsp; 2nd &nbsp; 25% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2nd &nbsp; 24%&nbsp;</font>
+                </div>
+                <div>
+                    <font size="5">&nbsp; 3rd &nbsp; &nbsp;20% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3rd &nbsp; 18%</font>
+                </div>
+                <div>
+                    <font size="5">&nbsp; 4th &nbsp; &nbsp;10% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4th &nbsp; &nbsp;13%</font>
+                </div>
+                <div>
+                    <font size="5">&nbsp; 5th &nbsp; &nbsp; 5% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5th &nbsp; &nbsp; &nbsp;9%</font>
+                </div>
+                <div>
+                    <font size="5">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6th &nbsp; &nbsp; 6%</font>
+                </div>
+                <div><br></div>
+                <div><br></div>
+                <div>
+                    <font size="5"><br></font>
+                </div>
+                <div>
+                    <font size="5"><b>&nbsp; <u>2501-5000</u>&nbsp; </b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<u><b>5001 and up</b></u></font>
+                </div>
+                <div>
+                    <font size="5">&nbsp; 1st &nbsp; &nbsp;27% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1st &nbsp; &nbsp; 25%</font>
+                </div>
+                <div>
+                    <font size="5">&nbsp; 2nd &nbsp; 21% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2nd &nbsp; &nbsp;20%</font>
+                </div>
+                <div>
+                    <font size="5">&nbsp; 3rd &nbsp; &nbsp;16% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3rd &nbsp; &nbsp;15%</font>
+                </div>
+                <div>
+                    <font size="5">&nbsp; 4th &nbsp; &nbsp;12% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4th &nbsp; &nbsp; 11%</font>
+                </div>
+                <div>
+                    <font size="5">&nbsp; 5th &nbsp; &nbsp; 9% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5th &nbsp; &nbsp; 9%</font>
+                </div>
+                <div>
+                    <font size="5">&nbsp; 6th &nbsp; &nbsp; 6% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 6th &nbsp; &nbsp; 6%</font>
+                </div>
+                <div>
+                    <font size="5">&nbsp; 7th &nbsp; &nbsp; 5% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 7th &nbsp; &nbsp; 5%</font>
+                </div>
+                <div>
+                    <font size="5">&nbsp; 8th &nbsp; &nbsp; 4% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 8th &nbsp; &nbsp; 4%</font>
+                </div>
+                <div>
+                    <font size="5">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 9th &nbsp; &nbsp; 3%</font>
+                </div>
+                <div>
+                    <font size="5">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10th &nbsp; 2%</font>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-silex-type="text" class="editable-style silex-id-1495995958927-42 text-element page-how-to paged-element" data-silex-id="silex-id-1495995958927-42">
+        <div class="silex-element-content normal">
+            <font size="5">The game is fairly simple. You will be playing 5 racks of 10ball vs "The Ghost". There are a few differences in the rules so please read them closely. A max score is 50 points. All players will have a handicap that will make it fair for everyone.
+                Below is a complete walk through of the steps from a first time user all the way through playing your match.</font>
+            <div>
+                <font size="5"><br></font>
+            </div>
+            <div>
+                <font size="5">1) Register or sign in</font>
+            </div>
+            <div>
+                <font size="5">2) Click the tournaments link</font>
+            </div>
+            <div>
+                <font size="5">3) Click the table size or open tournament (non handicapped and any size table)</font>
+            </div>
+            <div>
+                <font size="5">4) Pay your entry fee-$20</font>
+            </div>
+            <div>
+                <font size="5">5) Set up your smart phone, tablet or laptop in a way that it can view the entire table and several feet around it</font>
+            </div>
+            <div>
+                <font size="5">6) Push the play button</font>
+            </div>
+            <div>
+                <font size="5">7) Shoot the first rack of the ghost</font>
+            </div>
+            <div>
+                <font size="5">8) Write down your score (We have a printable score sheet)</font>
+            </div>
+            <div>
+                <font size="5">9) Repeat steps 7 and 8 until the 5 racks are shot</font>
+            </div>
+            <div>
+                <font size="5">10) Put your total in our system</font>
+            </div>
+            <div>
+                <font size="5">11) Stop the recording by pressing stop</font>
+            </div>
+            <div>
+                <font size="5">12) You can view where your score ranks in the field.&nbsp;</font>
+            </div>
+            <div>
+                <font size="5">13) No scores will be shown for anyone, just the placement</font>
+            </div>
+            <div>
+                <font size="5">14) Enter as many times as you like</font>
+            </div>
+            <div>
+                <font size="5">15) Have fun!!!!</font>
+            </div>
+        </div>
+    </div>
+    <div data-silex-type="text" class="editable-style silex-id-1495996000639-43 text-element page-how-to paged-element" data-silex-id="silex-id-1495996000639-43">
+        <div class="silex-element-content normal">
+            <font size="7"><b><u>How To Guide</u></b></font>
+        </div>
+    </div>
+</body>
+
+</html>
